@@ -1,16 +1,9 @@
-// sessionStorage.setItem('name','bob')
-// localStorage.setItem('name','kyle')
-
-// console.log(sessionStorage.getItem('name'))
-
-// document.cookie='name=bob';
-// console.log(document.cookie);
-
 
 let btn=document.querySelector('.btn')
 let namebox=document.querySelector('#name')
 let emailbox=document.querySelector('#email')
 let i=0;
+
 
 //scan all existing element from localStorage 
 window.addEventListener("DOMContentLoaded",() => {
@@ -26,6 +19,8 @@ window.addEventListener("DOMContentLoaded",() => {
     }
 });
 
+
+
 //Adding new user details
 btn.addEventListener('click',(e)=>{
     e.preventDefault();
@@ -34,13 +29,13 @@ btn.addEventListener('click',(e)=>{
         name:namebox.value,
         email:emailbox.value,
     };
-
     let myobj_serialized=JSON.stringify(myobj);
     localStorage.setItem(myobj.email,myobj_serialized);
     // let myobj_deserialized=JSON.parse(localStorage.getItem(myobj.email));
     // console.log(myobj_deserialized)
     ShowNewUser(myobj) 
 })
+
 
 function ShowNewUser(userdetails){
     document.getElementById('email').value='';
@@ -60,12 +55,16 @@ function ShowNewUser(userdetails){
     MainNodeVariable.innerHTML=MainNodeVariable.innerHTML + childHtml;
 }
 
+
+
 //remove details from the localstorage
 function deleteser(userid){
     console.log("deleting function");
     localStorage.removeItem(userid);
     removeUserFromScreen(userid);
 }
+
+
 
 //remove user from the frontend
 function removeUserFromScreen(userid){
@@ -75,6 +74,8 @@ function removeUserFromScreen(userid){
         parentNode.removeChild(childNodeToBeDeleted);
     }
 }
+
+
 
 //edit user details
 function removeuser(useremail, username){
