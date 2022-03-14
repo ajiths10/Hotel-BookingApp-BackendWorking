@@ -54,15 +54,15 @@ function ShowNewUser(userdetails){
     let MainNodeVariable=document.getElementById('itemss');
     let childHtml=`<li id=${userdetails.email}> 
                         <b>Name:</b> ${userdetails.name} -<b> Email:</b> ${userdetails.email} 
-                        <button onclick=deleteser('${userdetails.email}' class="buttonDly") > Remove </button> 
-                        <button onclick=removeuser('${userdetails.email}','${userdetails.name}' class="buttonEdt")> edit </button> 
+                        <button onclick=deleteser('${userdetails.email}') class='buttonDly'> Remove </button> 
+                        <button onclick=removeuser('${userdetails.email}','${userdetails.name}') class="buttonEdt"> edit </button> 
                     </li> `;
     MainNodeVariable.innerHTML=MainNodeVariable.innerHTML + childHtml;
 }
 
 //remove details from the localstorage
 function deleteser(userid){
-    console.log(userid);
+    console.log("deleting function");
     localStorage.removeItem(userid);
     removeUserFromScreen(userid);
 }
