@@ -59,7 +59,7 @@ function ShowNewUser(userdetails){
 
 //remove details from the localstorage
 function deleteser(userid){
-    console.log("deleting function");
+    console.log("deleting function called");
     localStorage.removeItem(userid);
     removeUserFromScreen(userid);
 }
@@ -79,6 +79,7 @@ function removeUserFromScreen(userid){
 
 //edit user details
 function removeuser(useremail, username){
+    console.log('Edit function called');
     let Namebox=document.getElementById('name');
     let EmailBox=document.getElementById('email');
 
